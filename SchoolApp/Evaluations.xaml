@@ -1,0 +1,28 @@
+﻿<Window x:Class="SchoolApp.Evaluations"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:SchoolApp"
+        mc:Ignorable="d"
+        Title="Оценки учеников" Height="450" Width="800" WindowStartupLocation="CenterScreen">
+    <Grid>
+        <Button Content="Добавить" HorizontalAlignment="Left" Margin="323,110,0,0" VerticalAlignment="Top" Width="155" FontSize="14" Background="#FF201C26" BorderBrush="{x:Null}" Click="Button_AddStudent"/>
+        <Label Content="Ф.И.О" HorizontalAlignment="Left" Margin="161,32,0,0" VerticalAlignment="Top" Width="48"/>
+        <TextBox x:Name="sfcs" HorizontalAlignment="Left" Height="23" Margin="161,62,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="138"/>
+        <Label Content="Класс" HorizontalAlignment="Left" Margin="323,32,0,0" VerticalAlignment="Top" Width="46"/>
+        <TextBox x:Name="sclass" HorizontalAlignment="Left" Height="23" Margin="323,62,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="155"/>
+        <Label Content="Оценки" HorizontalAlignment="Left" Margin="505,32,0,0" VerticalAlignment="Top" Width="77"/>
+        <TextBox x:Name="evaluations" HorizontalAlignment="Left" Height="23" Margin="505,62,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="138"/>
+
+        <DataGrid Name="Data" HorizontalAlignment="Left" Height="240" Margin="80,160,0,0" VerticalAlignment="Top" Width="640">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="#" Binding="{Binding Path=IdStudent}" IsReadOnly="True"/>
+                <DataGridTextColumn Header="Ф.И.О" Binding="{Binding Path=FcsStudent}" IsReadOnly="True"/>
+                <DataGridTextColumn Header="Класс" Binding="{Binding Path=ClassStudent}" IsReadOnly="True"/>
+                <DataGridTextColumn Header="Средний Балл" Binding="{Binding Path=AverageScore}" IsReadOnly="True"/>
+                <DataGridTextColumn Header="Оценки (четверть)" Binding="{Binding Path=Evaluations}" IsReadOnly="True"/>
+            </DataGrid.Columns>
+        </DataGrid>
+    </Grid>
+</Window>
